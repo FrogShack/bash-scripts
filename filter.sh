@@ -2,8 +2,11 @@
 
 #usage and close if no argument provided
 if [ ${#@} == 0 ]; then
-        echo "Usage:./filter.sh <vulnerable url>"
-        echo "====Come back later with a URL===="
+        echo "-------------------------------------------"
+        echo "|    Usage:./filter.sh <vulnerable url>   |"
+        echo "|./filter.sh http://x.x.x.x/index.php?id= |"
+        echo "|      ==Come back later with a URL==     |"
+        echo "-------------------------------------------"
         exit 1
 fi
 
