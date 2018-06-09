@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#usage and close if no argument provided
+if [ ${#@} == 0 ]; then
+        echo "Usage:./dirtest <URL> <wordlist>"
+        echo "Example:./dirtest http://yoursite.com /root/Documents/directories.txt"
+        echo "edit response codes to grep"
+        exit 1
+fi
+# url argument
+URL="$1"
+# any wordlist argument
+wordlist="$2"
+
+echo "Dirtest Going to work...... "
+echo "Scanning Directories now  : "
+#curl for response code
+while read name; do
+response=$(curl --write-out %{http_code} --silent --output /dev/null $URL/${name} )
+        if [ $response > 0 ]; then
+          echo "[*]$URL/${name} [$response]" | grep '200\|301'
+        fi
+done < "$wordlist"
