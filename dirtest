@@ -11,9 +11,16 @@ fi
 URL="$1"
 # any wordlist argument
 wordlist="$2"
+echo "____________________________________________________"
+echo "____________________________________________________"
+echo "                                                    "
+echo "                                                    "
+echo "    Dirtest Going to work...                        "
+echo "           Scanning Directories now!                "
+echo "                                                    "
+echo "____________________________________________________"
+echo "____________________________________________________"
 
-echo "Dirtest Going to work...... "
-echo "Scanning Directories now  : "
 #curl for response code
 while read name; do
 response=$(curl --write-out %{http_code} --silent --output /dev/null $URL/${name} )
@@ -21,3 +28,4 @@ response=$(curl --write-out %{http_code} --silent --output /dev/null $URL/${name
           echo "[*]$URL/${name} [$response]" | grep '200\|301'
         fi
 done < "$wordlist"
+
