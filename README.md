@@ -1,2 +1,2 @@
 # bash-scripts
-Just some simple bash scripts I made while studying for the OSCP
+Just some simple bash scripts for pentesting/CTFs
