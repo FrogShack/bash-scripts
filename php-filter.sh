@@ -3,14 +3,14 @@
 #usage and close if no argument provided
 if [ ${#@} == 0 ]; then
         echo "-------------------------------------------"
-        echo "|    Usage:./filter.sh <vulnerable url>   |"
-        echo "|./filter.sh http://x.x.x.x/index.php?id= |"
+        echo "|    Usage:./php-filter.sh <vulnerable url>   |"
+        echo "|./php-filter.sh http://x.x.x.x/index.php?id= |"
         echo "|      ==Come back later with a URL==     |"
         echo "-------------------------------------------"
         exit 1
 fi
 
-#Vulnerable URL argument
+#LFI Vulnerable URL argument
 URL="$1"
 
         #Input filenames to Include on an infinite loop
